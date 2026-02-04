@@ -1016,6 +1016,100 @@
             transform-style: preserve-3d;
             perspective: 1000px;
         }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            color: var(--border);
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-bright);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: white;
+        }
+
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
     </style>
 </head>
 <body>
@@ -1162,6 +1256,51 @@
                 <a href="https://3d-configurator-lilac.vercel.app/" target="_blank" class="btn btn-secondary">
                     Open in nieuw tabblad →
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Wat anderen zeggen</p>
+                <h2 class="section-title">Resultaten uit de praktijk</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Sinds we de configurator hebben, krijgen we 40% minder telefoontjes met basisvragen. Klanten weten precies wat ze willen."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JV</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Jan Vermeer</span>
+                            <span class="testimonial-role">Eigenaar, Dakkapel Direct</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"De ROI was binnen 2 maanden terugverdiend. Onze offertes zijn nu veel gerichter en de klant voelt zich serieus genomen."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MB</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Mark de Boer</span>
+                            <span class="testimonial-role">Directeur, Aanbouw Expert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Eindelijk onderscheiden we ons van de concurrent. Klanten zeggen vaak dat onze website er het meest professioneel uitziet."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">PK</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Peter Kuiper</span>
+                            <span class="testimonial-role">Sales Manager, OpbouwNL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
